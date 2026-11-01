@@ -1,0 +1,9 @@
+# robots.txt for ZEN AI – Personal Intelligence System
+# A DeveloperHut Product (DeveloperHunt.in)
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /vault/
+Disallow: /backup/
+
+Sitemap: /sitemap.xml

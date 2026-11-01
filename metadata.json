@@ -1,0 +1,7 @@
+{
+  "name": "ZEN AI – Personal Intelligence System",
+  "description": "A local-first, privacy-focused personal intelligence system with persistent memory, knowledge library, document intelligence, and secure vault backups.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
