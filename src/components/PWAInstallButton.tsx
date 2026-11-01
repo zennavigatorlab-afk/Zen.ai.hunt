@@ -16,7 +16,7 @@ export const PWAInstallButton: React.FC = () => {
     return (
       <button
         onClick={install}
-        className="flex items-center gap-1.5 rounded-xl bg-indigo-600/90 hover:bg-indigo-500 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition cursor-pointer"
+        className="flex items-center gap-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors duration-150 cursor-pointer"
         title="Install ZEN AI as a native application"
       >
         <Download className="w-3.5 h-3.5" />
@@ -31,7 +31,7 @@ export const PWAInstallButton: React.FC = () => {
       <>
         <button
           onClick={() => setShowIOSGuide(true)}
-          className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700 transition cursor-pointer"
+          className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:bg-slate-700 transition-colors duration-150 cursor-pointer"
         >
           <Smartphone className="w-3.5 h-3.5 text-indigo-400" />
           <span>Install PWA</span>
@@ -61,7 +61,7 @@ export const PWAInstallButton: React.FC = () => {
               </p>
               <button
                 onClick={() => setShowIOSGuide(false)}
-                className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 py-2 text-xs font-semibold text-white transition"
+                className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 py-2 text-xs font-semibold text-white transition-colors duration-150"
               >
                 Got it
               </button>

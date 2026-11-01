@@ -8,8 +8,8 @@ export const OfflineIndicator: React.FC = () => {
   if (isOnline) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 flex items-center gap-2 rounded-xl bg-amber-600/90 backdrop-blur-md px-3.5 py-2 text-xs font-semibold text-white shadow-lg border border-amber-500/40 animate-pulse">
-      <WifiOff className="w-4 h-4" />
+    <div className="fixed bottom-4 left-4 z-50 flex items-center gap-2 rounded-xl bg-amber-950/90 border border-amber-500/40 px-3.5 py-2 text-xs font-medium text-amber-200">
+      <WifiOff className="w-4 h-4 text-amber-400" />
       <span>Offline Mode — Operating on local IndexedDB memory cache</span>
     </div>
   );

@@ -142,7 +142,7 @@ export const DocumentsView: React.FC = () => {
             </div>
           </div>
 
-          <label className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white shadow-md shadow-indigo-600/30 transition cursor-pointer">
+          <label className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition-colors duration-150 cursor-pointer">
             <Upload className="w-4 h-4" />
             <span>{isUploading ? 'Parsing & Indexing...' : 'Import Documents'}</span>
             <input

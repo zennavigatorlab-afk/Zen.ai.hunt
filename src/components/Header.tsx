@@ -43,21 +43,18 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
 
         <div className="flex items-center gap-2.5">
-          {/* Logo with intelligent zen aperture */}
-          <div className="relative w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-600 to-cyan-500 p-[1px] shadow-md shadow-indigo-500/20">
-            <div className="w-full h-full rounded-xl bg-slate-950 flex items-center justify-center">
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300 text-xs">
-                ZEN
-              </span>
-            </div>
-            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-cyan-400" />
+          {/* Clean, minimalist brand mark */}
+          <div className="relative w-8 h-8 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center">
+            <span className="font-extrabold text-indigo-400 text-xs tracking-wider">
+              ZEN
+            </span>
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-cyan-400 border border-slate-950" />
           </div>
 
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-sm font-extrabold tracking-tight text-white">ZEN AI</h1>
-              <span className="hidden sm:inline-block text-[9px] uppercase font-bold tracking-widest px-1.5 py-0.2 rounded bg-indigo-950 border border-indigo-500/30 text-indigo-300 font-mono">
+              <h1 className="text-sm font-bold tracking-tight text-white">ZEN AI</h1>
+              <span className="hidden sm:inline-block text-[9px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-slate-900 border border-slate-800 text-indigo-300 font-mono">
                 System
               </span>
             </div>
@@ -74,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="hidden md:flex items-center flex-1 max-w-sm mx-6">
         <button
           onClick={onOpenSearch}
-          className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 hover:border-slate-700 hover:text-slate-200 transition cursor-pointer"
+          className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 hover:border-slate-700 hover:text-slate-200 transition-colors duration-150 cursor-pointer"
         >
           <div className="flex items-center gap-2">
             <Search className="w-3.5 h-3.5 text-indigo-400" />
@@ -91,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Mobile Search Icon */}
         <button
           onClick={onOpenSearch}
-          className="md:hidden p-2 rounded-xl text-slate-400 hover:text-white"
+          className="md:hidden p-2 rounded-xl text-slate-400 hover:text-white transition-colors duration-150"
           title="Search"
         >
           <Search className="w-4 h-4" />
@@ -116,7 +113,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* System Tour / Onboarding */}
         <button
           onClick={onOpenOnboarding}
-          className="p-2 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white hover:border-slate-700 transition"
+          className="p-2 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white hover:border-slate-700 transition-colors duration-150"
           title="Product Tour & Features"
         >
           <HelpCircle className="w-4 h-4" />
@@ -125,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Settings button */}
         <button
           onClick={onOpenSettings}
-          className="p-2 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white hover:border-slate-700 transition"
+          className="p-2 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-400 hover:text-white hover:border-slate-700 transition-colors duration-150"
           title="Settings"
         >
           <Settings className="w-4 h-4" />

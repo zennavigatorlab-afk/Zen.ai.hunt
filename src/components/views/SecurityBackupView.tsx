@@ -263,7 +263,7 @@ export const SecurityBackupView: React.FC = () => {
           <button
             type="submit"
             disabled={isProcessing}
-            className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white shadow-md shadow-indigo-600/30 transition cursor-pointer disabled:opacity-50"
+            className="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition-colors duration-150 cursor-pointer disabled:opacity-50"
           >
             {isProcessing ? 'Encrypting Archive...' : 'Download Encrypted Vault'}
           </button>
@@ -314,7 +314,7 @@ export const SecurityBackupView: React.FC = () => {
           <button
             type="submit"
             disabled={isProcessing || !restoreFile}
-            className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold text-white shadow-md shadow-emerald-600/30 transition cursor-pointer disabled:opacity-50"
+            className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold text-white transition-colors duration-150 cursor-pointer disabled:opacity-50"
           >
             {isProcessing ? 'Verifying & Restoring...' : 'Verify & Restore Vault'}
           </button>

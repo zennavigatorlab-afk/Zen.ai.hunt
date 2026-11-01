@@ -262,12 +262,12 @@ export const ChatView: React.FC<ChatViewProps> = ({
       <div
         className={`${
           sidebarOpen ? 'w-64 sm:w-72' : 'w-0'
-        } transition-all duration-300 border-r border-slate-800/80 bg-slate-900/40 flex flex-col shrink-0 overflow-hidden relative z-10`}
+        } transition-[width] duration-150 ease-out border-r border-slate-800/80 bg-slate-900/40 flex flex-col shrink-0 overflow-hidden relative z-10`}
       >
         <div className="p-3 border-b border-slate-800/80 flex items-center justify-between">
           <button
             onClick={handleCreateNewConversation}
-            className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white shadow-sm transition"
+            className="flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition-colors duration-150"
           >
             <Plus className="w-4 h-4" /> New Conversation
           </button>
@@ -343,7 +343,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
               <span className="text-xs font-semibold text-slate-200">
                 {conversations.find((c) => c.id === activeConvId)?.title || 'ZEN AI Intelligence'}
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             </div>
           </div>
 
@@ -373,7 +373,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
 
         {/* Suggested Memory Banner if detected */}
         {suggestedMemory && (
-          <div className="px-4 py-2 bg-indigo-950/40 border-b border-indigo-500/20 flex items-center justify-between text-xs animate-fade-in">
+          <div className="px-4 py-2 bg-indigo-950/40 border-b border-indigo-500/20 flex items-center justify-between text-xs">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
               <span className="text-slate-300">
@@ -383,13 +383,13 @@ export const ChatView: React.FC<ChatViewProps> = ({
             <div className="flex items-center gap-2">
               <button
                 onClick={handleSaveSuggestedMemory}
-                className="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition cursor-pointer"
+                className="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors duration-150 cursor-pointer"
               >
                 Save to Memory
               </button>
               <button
                 onClick={() => setSuggestedMemory(null)}
-                className="px-2 py-1 text-slate-400 hover:text-slate-200"
+                className="px-2 py-1 text-slate-400 hover:text-slate-200 transition-colors duration-150"
               >
                 Dismiss
               </button>
@@ -424,7 +424,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                       setInputText(prompt);
                       textareaRef.current?.focus();
                     }}
-                    className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-left text-xs text-slate-300 hover:border-indigo-500/50 hover:bg-slate-850 transition cursor-pointer"
+                    className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-left text-xs text-slate-300 hover:border-indigo-500/50 hover:bg-slate-850 transition-colors duration-150 cursor-pointer"
                   >
                     "{prompt}"
                   </button>
@@ -456,7 +456,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                     className={`relative max-w-[90%] sm:max-w-[80%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
                       isAssistant
                         ? 'bg-slate-900/90 border border-slate-800 text-slate-200'
-                        : 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
+                        : 'bg-indigo-600 text-white'
                     }`}
                   >
                     {/* Message content */}
@@ -467,7 +467,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                       <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
                         <button
                           onClick={() => setSelectedMemoryContext(msg.usedMemories || [])}
-                          className="flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition font-medium cursor-pointer"
+                          className="flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition-colors duration-150 font-medium cursor-pointer"
                         >
                           <Sparkles className="w-3.5 h-3.5" />
                           <span>{msg.usedMemories.length} relevant memories utilized</span>
@@ -476,7 +476,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                     )}
 
                     {/* Action buttons */}
-                    <div className="absolute top-2 right-2 flex items-center gap-1 opacity-0 hover:opacity-100 transition">
+                    <div className="absolute top-2 right-2 flex items-center gap-1 opacity-0 hover:opacity-100 transition-opacity duration-150">
                       <button
                         onClick={() => handleCopy(msg.id, msg.content)}
                         className="p-1 rounded bg-slate-800/80 text-slate-400 hover:text-white"
@@ -494,7 +494,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
           {isLoading && (
             <div className="flex items-start gap-2">
               <div className="p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-400 flex items-center gap-2 text-xs">
-                <span className="w-2 h-2 rounded-full bg-indigo-500 animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-indigo-400" />
                 <span>ZEN AI is formulating response & synthesizing memory context...</span>
               </div>
             </div>
@@ -556,9 +556,9 @@ export const ChatView: React.FC<ChatViewProps> = ({
             <button
               onClick={handleSendMessage}
               disabled={!inputText.trim() || isLoading}
-              className={`p-2.5 rounded-xl transition shrink-0 ${
+              className={`p-2.5 rounded-xl transition-colors duration-150 shrink-0 ${
                 inputText.trim() && !isLoading
-                  ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/30 cursor-pointer'
+                  ? 'bg-indigo-600 hover:bg-indigo-500 text-white cursor-pointer'
                   : 'bg-slate-800 text-slate-500 cursor-not-allowed'
               }`}
             >
@@ -567,7 +567,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
           </div>
           <div className="flex items-center justify-between max-w-4xl mx-auto mt-2 text-[10px] text-slate-500 px-1">
             <span>ZEN AI – A DeveloperHut Product in partnership with DeveloperHunt.in</span>
-            <button onClick={onOpenOnboarding} className="hover:text-indigo-400 transition flex items-center gap-1">
+            <button onClick={onOpenOnboarding} className="hover:text-indigo-400 transition-colors duration-150 flex items-center gap-1 cursor-pointer">
               <HelpCircle className="w-3 h-3" /> System Tour
             </button>
           </div>

@@ -192,7 +192,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                     onSelectResult(item.type, item.id);
                     onClose();
                   }}
-                  className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-900 border border-transparent hover:border-slate-800 cursor-pointer transition group"
+                  className="flex items-center justify-between p-3 rounded-xl hover:bg-slate-900 border border-transparent hover:border-slate-800 cursor-pointer transition-colors duration-150 group"
                 >
                   <div className="flex items-start gap-3 min-w-0 pr-3">
                     <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 shrink-0 mt-0.5">

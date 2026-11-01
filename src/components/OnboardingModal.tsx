@@ -222,8 +222,8 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-xl rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs">
+      <div className="relative w-full max-w-xl rounded-2xl bg-slate-950 border border-slate-800 shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
         {/* Header bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800/80 bg-slate-900/40">
           <div className="flex items-center gap-3">
@@ -244,7 +244,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors duration-150"
             title="Skip Onboarding"
           >
             <X className="w-5 h-5" />
@@ -254,7 +254,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
         {/* Step Progress indicators */}
         <div className="w-full bg-slate-900 h-1">
           <div
-            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 h-1 transition-all duration-300"
+            className="bg-indigo-500 h-1 transition-[width] duration-150"
             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           />
         </div>
@@ -269,7 +269,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
         <div className="flex items-center justify-between px-6 py-4 border-t border-slate-800/80 bg-slate-900/60 mt-auto">
           <button
             onClick={onClose}
-            className="text-xs text-slate-400 hover:text-slate-200 transition px-2 py-1"
+            className="text-xs text-slate-400 hover:text-slate-200 transition-colors duration-150 px-2 py-1"
           >
             Skip Tour
           </button>
@@ -278,7 +278,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
             {currentStep > 0 && (
               <button
                 onClick={handlePrev}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-medium text-slate-200 hover:bg-slate-700 transition"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800/80 text-xs font-medium text-slate-200 hover:bg-slate-700 transition-colors duration-150"
               >
                 <ArrowLeft className="w-3.5 h-3.5" /> Back
               </button>
@@ -286,7 +286,7 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({
 
             <button
               onClick={handleNext}
-              className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-xs font-semibold text-white shadow-md shadow-indigo-600/30 transition"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-semibold text-white transition-colors duration-150"
             >
               {currentStep === steps.length - 1 ? (
                 <>
